@@ -1,0 +1,110 @@
+select * from daily_transactions_count
+order by collected_for_day desc
+
+## Average monthly Users (2021)
+select 
+	to_char(collected_for_day, 'MM') as month,
+	avg(active_accounts_count) as avg_price
+from
+	daily_active_accounts_count
+where collected_for_day >= '2020-01-01' and collected_for_day <= '2020-12-31'
+group by 
+	to_char(collected_for_day, 'MM')
+order by
+	to_char(collected_for_day, 'MM') DESC
+
+## Average monthly Users (2021)
+select 
+	to_char(collected_for_day, 'MM') as month,
+	avg(active_accounts_count) as avg_price
+from
+	daily_active_accounts_count
+where collected_for_day >= '2021-01-01' and collected_for_day <= '2021-12-31'
+group by 
+	to_char(collected_for_day, 'MM')
+order by
+	to_char(collected_for_day, 'MM') DESC
+	
+## Average monthly Users (Jan 2022)
+select 
+	to_char(collected_for_day, 'MM') as month,
+	avg(active_accounts_count) as avg_price
+from
+	daily_active_accounts_count
+where collected_for_day >= '2022-01-01' and collected_for_day <= '2022-12-31'
+group by 
+	to_char(collected_for_day, 'MM')
+order by
+	to_char(collected_for_day, 'MM') DESC
+
+## Average Monthly Transactions (2020)
+select 
+	to_char(collected_for_day, 'MM') as month,
+	avg(transactions_count) as avg_transactions
+from
+	daily_transactions_count
+where collected_for_day >= '2020-01-01' and collected_for_day <= '2020-12-31'
+group by 
+	to_char(collected_for_day, 'MM')
+order by
+	to_char(collected_for_day, 'MM') DESC
+	
+## Average Monthly Transactions (2021)
+select 
+	to_char(collected_for_day, 'MM') as month,
+	avg(transactions_count) as avg_transactions
+from
+	daily_transactions_count
+where collected_for_day >= '2021-01-01' and collected_for_day <= '2021-12-31'
+group by 
+	to_char(collected_for_day, 'MM')
+order by
+	to_char(collected_for_day, 'MM') DESC
+	
+## Average Monthly Transactions (2022)
+select 
+	to_char(collected_for_day, 'MM') as month,
+	avg(transactions_count) as avg_transactions
+from
+	daily_transactions_count
+where collected_for_day >= '2022-01-01' and collected_for_day <= '2022-12-31'
+group by 
+	to_char(collected_for_day, 'MM')
+order by
+	to_char(collected_for_day, 'MM') DESC
+	
+## Monthly Fees (2020)
+select 
+	to_char(collected_for_day, 'MM') as month,
+	sum(tokens_spent_on_fees) as fees
+from
+	daily_tokens_spent_on_fees
+where collected_for_day >= '2020-01-01' and collected_for_day <= '2020-12-31'
+group by 
+	to_char(collected_for_day, 'MM')
+order by
+	to_char(collected_for_day, 'MM') DESC
+	
+## Monthly Fees (2021)
+select 
+	to_char(collected_for_day, 'MM') as month,
+	sum(tokens_spent_on_fees) as fees
+from
+	daily_tokens_spent_on_fees
+where collected_for_day >= '2021-01-01' and collected_for_day <= '2021-12-31'
+group by 
+	to_char(collected_for_day, 'MM')
+order by
+	to_char(collected_for_day, 'MM') DESC
+	
+## Monthly Fees (2022)
+select 
+	to_char(collected_for_day, 'MM') as month,
+	sum(tokens_spent_on_fees) as fees
+from
+	daily_tokens_spent_on_fees
+where collected_for_day >= '2022-01-01' and collected_for_day <= '2022-12-31'
+group by 
+	to_char(collected_for_day, 'MM')
+order by
+	to_char(collected_for_day, 'MM') DESC
